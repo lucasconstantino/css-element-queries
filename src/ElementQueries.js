@@ -366,6 +366,8 @@
                         }
                     } else if (4 === rules[i].type) {
                         readRules(rules[i].cssRules || rules[i].rules);
+                    } else if (3 === rules[i].type) { // CSSRule.IMPORT_RULE
+                        readRules(rules[i].styleSheet.cssRules || rules[i].styleSheet.rules);
                     }
                 }
             }
